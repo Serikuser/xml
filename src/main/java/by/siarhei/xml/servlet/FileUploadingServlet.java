@@ -1,5 +1,8 @@
 package by.siarhei.xml.servlet;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -13,7 +16,9 @@ import java.io.*;
         , maxFileSize = 1024 * 1024 * 5
         , maxRequestSize = 1024 * 1024 * 5 * 5)
 public class FileUploadingServlet extends HttpServlet {
-    private static final String UPLOAD_DIR = "C:\\temp";
+    private static final Logger logger = LogManager.getLogger();
+
+    private static final String UPLOAD_DIR = "C:\\temp\\xml";
 
     @Override
     protected void doPost(HttpServletRequest request,
@@ -21,9 +26,10 @@ public class FileUploadingServlet extends HttpServlet {
             throws ServletException, IOException {
         String uploadFileDir = File.separator + UPLOAD_DIR + File.separator;
         File fileSaveDir = new File(uploadFileDir);
+        logger.info("Output directory was created");
         if (!fileSaveDir.exists()) {
             fileSaveDir.mkdirs();
-            System.out.println("Output directory was created");
+            logger.info("Output directory was created");
         }
         request.getParts().stream().forEach(part -> {
             try {

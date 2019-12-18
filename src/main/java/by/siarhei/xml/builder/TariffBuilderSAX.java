@@ -1,44 +1,35 @@
 package by.siarhei.xml.builder;
 
-import by.siarhei.xml.entity.Tariff;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
-import java.util.List;
+import java.util.LinkedList;
 
-public class TariffBuilderSAX {
-    List<Tariff> tariffs;
+public class TariffBuilderSAX extends AbstractBuilder {
+
     private TariffHandler handler;
     private SAXParserFactory factory = SAXParserFactory.newInstance();
 
     public TariffBuilderSAX() {
+        tariffs = new LinkedList<>();
         handler = new TariffHandler();
     }
 
-    public List<Tariff> getTariffs() {
-        return this.tariffs;
-    }
-
-    public void buildSetTariffs(String fileName) {
+    @Override
+    public void buildTariffs(String fileName) {
         try {
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(fileName, handler);
         } catch (SAXException e) {
-            System.out.println(e);
+            logger.error(e);
         } catch (IOException e) {
-            System.out.println(e);
+            logger.error(e);
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
+            logger.error(e);
         }
         tariffs = handler.getTariffs();
-    }
-
-    public static void main(String[] args) {
-        TariffBuilderSAX saxBuilder = new TariffBuilderSAX();
-        saxBuilder.buildSetTariffs("data/tariffs.xml");
-        System.out.println(saxBuilder.getTariffs());
     }
 }
