@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
-public abstract class AbstractBuilder {
+public abstract class AbstractTariffBuilder {
     protected static final Logger logger = LogManager.getLogger();
 
     protected List<Tariff> tariffs;

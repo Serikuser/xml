@@ -15,11 +15,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class TariffBuilderStAX extends AbstractBuilder{
+public class TariffTariffBuilderStAX extends AbstractTariffBuilder {
 
     private XMLInputFactory inputFactory;
 
-    public TariffBuilderStAX() {
+    public TariffTariffBuilderStAX() {
         tariffs = new LinkedList<>();
         inputFactory = XMLInputFactory.newInstance();
     }

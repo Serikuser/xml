@@ -16,11 +16,11 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class TariffBuilderDOM extends AbstractBuilder {
+public class TariffTariffBuilderDOM extends AbstractTariffBuilder {
 
     private DocumentBuilder documentBuilder;
 
-    public TariffBuilderDOM() {
+    public TariffTariffBuilderDOM() {
         tariffs = new LinkedList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {

@@ -8,12 +8,12 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class TariffBuilderSAX extends AbstractBuilder {
+public class TariffTariffBuilderSAX extends AbstractTariffBuilder {
 
     private TariffHandler handler;
     private SAXParserFactory factory = SAXParserFactory.newInstance();
 
-    public TariffBuilderSAX() {
+    public TariffTariffBuilderSAX() {
         tariffs = new LinkedList<>();
         handler = new TariffHandler();
     }
