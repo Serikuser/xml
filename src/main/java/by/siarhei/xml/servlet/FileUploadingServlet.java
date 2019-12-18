@@ -26,7 +26,6 @@ public class FileUploadingServlet extends HttpServlet {
             throws ServletException, IOException {
         String uploadFileDir = File.separator + UPLOAD_DIR + File.separator;
         File fileSaveDir = new File(uploadFileDir);
-        logger.info("Output directory was created");
         if (!fileSaveDir.exists()) {
             fileSaveDir.mkdirs();
             logger.info("Output directory was created");

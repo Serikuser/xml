@@ -37,9 +37,4 @@ public class TariffsXMLValidator {
         }
         return isValid;
     }
-
-    public static void main(String[] args) throws SAXException {
-        TariffsXMLValidator validator = new TariffsXMLValidator();
-        validator.validate("data/tariffs.xml", "data/tariffs.xsd");
-    }
 }
