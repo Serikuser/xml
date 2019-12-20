@@ -33,8 +33,9 @@ public class TariffHandler extends DefaultHandler {
             case TARIFF:
                 current = new Tariff();
                 current.setOperator(attributes.getValue(0));
-                if (attributes.getLength() == 2) {
-                    current.setPayroll(Double.parseDouble(attributes.getValue(1)));
+                current.setPayroll(Double.parseDouble(attributes.getValue(1)));
+                if (attributes.getLength() == 3) {
+                    current.setLaunchDate(attributes.getValue(2));
                 }
                 break;
             case PRICES:

@@ -4,6 +4,7 @@ public enum TariffEnum {
     TARIFFS("tariffs"),
     OPERATOR("operator"),
     PAYROLL("payroll"),
+    LAUNCHDATE("launchDate"),
     TARIFF("tariff"),
     NAME("name"),
     INNERCALL("innerCall"),

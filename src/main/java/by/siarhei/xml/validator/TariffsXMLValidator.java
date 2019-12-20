@@ -30,8 +30,6 @@ public class TariffsXMLValidator {
             validator.validate(source);
             logger.info("file is valid.");
             isValid = true;
-        } catch (SAXException ex) {
-            logger.info(ex.getMessage());
         } catch (IOException e) {
             logger.error(filePath, e);
         }

@@ -6,22 +6,26 @@ import org.xml.sax.helpers.DefaultHandler;
 
 public class TariffErrorHandler extends DefaultHandler {
 
+    private static final String WARNING_LEVEL = "Warning";
+    private static final String ERROR_LEVEL = "Error";
+    private static final String FATAL_LEVEL = "Fatal";
+
     @Override
     public void warning(SAXParseException exception) throws SAXException {
-        handleMessage("Warning", exception);
+        handleMessage(WARNING_LEVEL, exception);
     }
 
     @Override
     public void error(SAXParseException exception) throws SAXException {
-        handleMessage("Error", exception);
+        handleMessage(ERROR_LEVEL, exception);
     }
 
     @Override
     public void fatalError(SAXParseException exception) throws SAXException {
-        handleMessage("Fatal", exception);
+        handleMessage(FATAL_LEVEL, exception);
     }
 
-    private String handleMessage(String level, SAXParseException exception) throws SAXException {
+    private void handleMessage(String level, SAXParseException exception) throws SAXException {
         int lineNumber = exception.getLineNumber();
         int columnNumber = exception.getColumnNumber();
         String message = exception.getMessage();

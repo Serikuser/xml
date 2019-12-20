@@ -1,9 +1,9 @@
 package by.siarhei.xml.factory;
 
 import by.siarhei.xml.builder.AbstractTariffBuilder;
-import by.siarhei.xml.builder.TariffTariffBuilderDOM;
-import by.siarhei.xml.builder.TariffTariffBuilderSAX;
-import by.siarhei.xml.builder.TariffTariffBuilderStAX;
+import by.siarhei.xml.builder.TariffBuilderDOM;
+import by.siarhei.xml.builder.TariffBuilderSAX;
+import by.siarhei.xml.builder.TariffBuilderStAX;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,11 +13,11 @@ public class TariffBuildFactory {
     public AbstractTariffBuilder createTariffBuilder(ParserType type) {
         switch (type) {
             case DOM:
-                return new TariffTariffBuilderDOM();
+                return new TariffBuilderDOM();
             case STAX:
-                return new TariffTariffBuilderStAX();
+                return new TariffBuilderStAX();
             case SAX:
-                return new TariffTariffBuilderSAX();
+                return new TariffBuilderSAX();
             default:
                 throw new EnumConstantNotPresentException(type.getDeclaringClass(), type.name());
         }

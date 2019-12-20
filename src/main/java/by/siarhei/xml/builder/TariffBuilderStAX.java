@@ -15,11 +15,11 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class TariffTariffBuilderStAX extends AbstractTariffBuilder {
+public class TariffBuilderStAX extends AbstractTariffBuilder {
 
     private XMLInputFactory inputFactory;
 
-    public TariffTariffBuilderStAX() {
+    public TariffBuilderStAX() {
         tariffs = new LinkedList<>();
         inputFactory = XMLInputFactory.newInstance();
     }
@@ -59,6 +59,7 @@ public class TariffTariffBuilderStAX extends AbstractTariffBuilder {
     public Tariff buildTariff(XMLStreamReader reader) throws XMLStreamException {
         Tariff tariff = new Tariff();
         tariff.setOperator(reader.getAttributeValue(null, TariffEnum.OPERATOR.getValue()));
+        tariff.setLaunchDate(reader.getAttributeValue(null, TariffEnum.LAUNCHDATE.getValue()));
         double payroll = Double.parseDouble(
                 reader.getAttributeValue(null, TariffEnum.PAYROLL.getValue()));
         tariff.setPayroll(payroll);
@@ -102,20 +103,23 @@ public class TariffTariffBuilderStAX extends AbstractTariffBuilder {
                     name = reader.getLocalName();
                     switch (TariffEnum.valueOf(name.toUpperCase())) {
                         case INNERCALL:
-                            double innerCall = Double.parseDouble(getXMLText(reader));
+                            double innerCall = Double.parseDouble(
+                                    getXMLText(reader));
                             prices.setInnerCallPrice(innerCall);
                             break;
                         case EXTERNALCALL:
-                            double externalCall = Double.parseDouble(getXMLText(reader));
-                            prices.setInnerCallPrice(externalCall);
+                            double externalCall = Double.parseDouble(
+                                    getXMLText(reader));
+                            prices.setExternalCallPrice(externalCall);
                             break;
                         case HOMECALL:
-                            double homeCall = Double.parseDouble(getXMLText(reader));
-                            prices.setInnerCallPrice(homeCall);
+                            double homeCall = Double.parseDouble(
+                                    getXMLText(reader));
+                            prices.setHomeCallPrice(homeCall);
                             break;
                         case SMS:
                             double smsPrice = Double.parseDouble(getXMLText(reader));
-                            prices.setInnerCallPrice(smsPrice);
+                            prices.setSmsPrice(smsPrice);
                             break;
                     }
                     break;

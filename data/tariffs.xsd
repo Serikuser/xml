@@ -17,7 +17,8 @@
             <element name="parameters" type="tns:Parameters"/>
         </sequence>
         <attribute name="operator" type="tns:Operator" use="required"/>
-        <attribute name="payroll" type="tns:cost"/>
+        <attribute name="payroll" type="tns:cost" use="required"/>
+        <attribute name="launchDate" type="date"/>
     </complexType>
     <simpleType name="Name">
         <restriction base="ID">

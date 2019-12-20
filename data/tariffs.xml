@@ -2,7 +2,7 @@
 <tariffs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://www.example.com/tariffs"
          xsi:schemaLocation="http://www.example.com/tariffs tariffs.xsd">
-    <tariff operator="MTS" payroll="10.00">
+    <tariff operator="MTS" payroll="10.00" launchDate="2009-01-01">
         <name>Bezlemitishe</name>
         <prices>
             <innerCall>0.55</innerCall>
@@ -16,11 +16,11 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="LIFE" payroll="4.00">
+    <tariff operator="LIFE" payroll="4.00" launchDate="2009-01-01">
         <name>Super8</name>
         <prices>
-            <innerCall>0.65</innerCall>
-            <externalCall>1.22</externalCall>
+            <innerCall>0.24</innerCall>
+            <externalCall>1.33</externalCall>
             <homeCall>3.00</homeCall>
             <sms>0.01</sms>
         </prices>
@@ -30,12 +30,12 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="LIFE" payroll="11.00">
+    <tariff operator="LIFE" payroll="11.00" launchDate="2009-01-01">
         <name>Mega</name>
         <prices>
-            <innerCall>0.65</innerCall>
-            <externalCall>1.22</externalCall>
-            <homeCall>3.00</homeCall>
+            <innerCall>0.01</innerCall>
+            <externalCall>1.03</externalCall>
+            <homeCall>1.55</homeCall>
             <sms>0.01</sms>
         </prices>
         <parameters>
@@ -44,12 +44,12 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="LIFE" payroll="3.00">
+    <tariff operator="LIFE" payroll="3.00" launchDate="2009-01-01">
         <name>Hyper</name>
         <prices>
-            <innerCall>0.65</innerCall>
-            <externalCall>1.22</externalCall>
-            <homeCall>3.00</homeCall>
+            <innerCall>0.56</innerCall>
+            <externalCall>0.13</externalCall>
+            <homeCall>0.01</homeCall>
             <sms>0.01</sms>
         </prices>
         <parameters>
@@ -58,7 +58,7 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="VELCOM" payroll="2.00">
+    <tariff operator="VELCOM" payroll="2.00" launchDate="2015-03-01">
         <name>Standard</name>
         <prices>
             <innerCall>0.65</innerCall>
@@ -67,12 +67,12 @@
             <sms>0.01</sms>
         </prices>
         <parameters>
-            <annyNumber>8.00</annyNumber>
+            <annyNumber>2.25</annyNumber>
             <tariffing>seconds</tariffing>
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="MTS" payroll="10.00">
+    <tariff operator="MTS" payroll="10.00" launchDate="2017-01-01">
         <name>Puper</name>
         <prices>
             <innerCall>0.55</innerCall>
@@ -86,7 +86,7 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="LIFE" payroll="4.00">
+    <tariff operator="LIFE" payroll="4.00" launchDate="2005-01-01">
         <name>Duper</name>
         <prices>
             <innerCall>0.65</innerCall>
@@ -100,7 +100,7 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="LIFE" payroll="11.00">
+    <tariff operator="LIFE" payroll="11.00" launchDate="2001-12-01">
         <name>MegaExtra</name>
         <prices>
             <innerCall>0.65</innerCall>
@@ -128,7 +128,7 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="VELCOM" payroll="2.00">
+    <tariff operator="VELCOM" payroll="2.00" launchDate="2017-01-01">
         <name>Families</name>
         <prices>
             <innerCall>0.65</innerCall>
@@ -156,7 +156,7 @@
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
-    <tariff operator="LIFE" payroll="4.00">
+    <tariff operator="LIFE" payroll="4.00" launchDate="2019-01-01">
         <name>ChoiseME</name>
         <prices>
             <innerCall>0.65</innerCall>
@@ -165,7 +165,7 @@
             <sms>0.01</sms>
         </prices>
         <parameters>
-            <annyNumber>8.00</annyNumber>
+            <annyNumber>7.00</annyNumber>
             <tariffing>minutes</tariffing>
             <connectionPrice>2.00</connectionPrice>
         </parameters>
@@ -179,7 +179,7 @@
             <sms>0.01</sms>
         </prices>
         <parameters>
-            <annyNumber>8.00</annyNumber>
+            <annyNumber>2.00</annyNumber>
             <tariffing>seconds</tariffing>
             <connectionPrice>2.00</connectionPrice>
         </parameters>
@@ -193,13 +193,27 @@
             <sms>0.01</sms>
         </prices>
         <parameters>
-            <annyNumber>8.00</annyNumber>
+            <annyNumber>7.00</annyNumber>
             <tariffing>minutes</tariffing>
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>
     <tariff operator="VELCOM" payroll="2.00">
         <name>Spotty</name>
+        <prices>
+            <innerCall>0.65</innerCall>
+            <externalCall>1.22</externalCall>
+            <homeCall>3.00</homeCall>
+            <sms>0.01</sms>
+        </prices>
+        <parameters>
+            <annyNumber>3.00</annyNumber>
+            <tariffing>seconds</tariffing>
+            <connectionPrice>2.00</connectionPrice>
+        </parameters>
+    </tariff>
+    <tariff operator="LIFE" payroll="11.00">
+        <name>ExtraMega</name>
         <prices>
             <innerCall>0.65</innerCall>
             <externalCall>1.22</externalCall>

@@ -16,11 +16,11 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class TariffTariffBuilderDOM extends AbstractTariffBuilder {
+public class TariffBuilderDOM extends AbstractTariffBuilder {
 
     private DocumentBuilder documentBuilder;
 
-    public TariffTariffBuilderDOM() {
+    public TariffBuilderDOM() {
         tariffs = new LinkedList<>();
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         try {
@@ -88,9 +88,10 @@ public class TariffTariffBuilderDOM extends AbstractTariffBuilder {
         tariff.setOperator(tarriffElement.getAttribute(TariffEnum.OPERATOR.getValue()));
         double payroll = Double.parseDouble(
                 tarriffElement.getAttribute(TariffEnum.PAYROLL.getValue()));
+        tariff.setLaunchDate(tarriffElement.getAttribute(TariffEnum.LAUNCHDATE.getValue()));
         tariff.setPayroll(payroll);
         tariff.setTariffName(getElementTextContent(tarriffElement, TariffEnum.NAME.getValue()));
-        tariff.setPrices(buildPrices(tarriffElement));
+        //tariff.setPrices(buildPrices(tarriffElement)); *commented to ignore prices on building
         tariff.setParameters(buildParameters(tarriffElement));
         return tariff;
     }
