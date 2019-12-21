@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tariffs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.com/tariffs"
+         xsi:schemaLocation="http://www.example.com/tariffs test.xsd">
+    <tariff operator="MTS" payroll="10.00" launchDate="2009-01-01">
+        <name>Bezlemitishe</name>
+        <prices>
+            <innerCall>0.55</innerCall>
+            <externalCall>1.02</externalCall>
+            <homeCall>2.00</homeCall>
+            <sms>0.05</sms>
+        </prices>
+        <parameters>
+            <annyNumber>10.00</annyNumber>
+            <tariffing>seconds</tariffing>
+            <connectionPrice>2.00</connectionPrice>
+        </parameters>
+    </tariff>
+    <tariff operator="LIFE" payroll="4.00" launchDate="2019-01-01">
+        <name>Super8</name>
+        <prices>
+            <innerCall>0.24</innerCall>
+            <externalCall>1.33</externalCall>
+            <homeCall>3.00</homeCall>
+            <sms>0.01</sms>
+        </prices>
+        <parameters>
+            <annyNumber>8.00</annyNumber>
+            <tariffing>minutes</tariffing>
+            <connectionPrice>2.00</connectionPrice>
+        </parameters>
+    </tariff>
+</tariffs>

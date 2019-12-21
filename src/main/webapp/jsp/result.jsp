@@ -7,12 +7,10 @@
 <head>
     <title>Result</title>
 </head>
-<body>
+<body style="background-color: rgba(250,252,209,0.75)">
 
-<hr/>
 <h3>File parsed with ${parseType} :</h3>
 <hr/>
-
 <table border="1">
     <thead>
     <tr>
@@ -42,13 +40,9 @@
     </tbody>
 
 </table>
-<hr/>
-<form action="controller" method="get" name="back">
-    <input type="hidden" name="command" value="back"/>
-    <input type="submit" value="back" name="action">
-</form>
+<br>
+<%@ include file="back.jsp" %>
 </hr>
-<div id="footer" style="text-align: left">&copy; SIARHEI PORSH traning.by Task:XML
-</div>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

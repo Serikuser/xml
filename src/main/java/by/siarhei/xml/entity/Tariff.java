@@ -60,7 +60,7 @@ public class Tariff {
     public String toString() {
         return String.format(
                 "%n%nTariff [%s], by %s operator, with payroll %s. %nWiths prices:%n%s %nParameters: %n%s"
-                , tariffName, operator, payroll, prices.toString(), parameters.toString());
+                , tariffName, operator, payroll, prices, parameters);
     }
 
     @Override

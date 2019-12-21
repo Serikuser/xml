@@ -8,8 +8,8 @@
     <meta charset="ISO-8859-1">
     <title>Parsed info</title>
 </head>
-<body>
-<hr/>
+<body style="background-color: rgba(250,252,209,0.75)">
+<br>
 <h3>File <c:out value="${fileName}"/> valid and uploaded.</h3>
 <hr/>
 Select parser:
@@ -25,13 +25,9 @@ Select parser:
     <input type="hidden" name="command" value="parse"/>
     <input type="submit" value="parse"/>
 </form>
+<br>
+<%@ include file="back.jsp" %>
 <hr/>
-<form action="controller" method="get" name="back">
-    <input type="hidden" name="command" value="back"/>
-    <input type="submit" value="back" name="action">
-</form>
-</hr>
-<div id="footer" style="text-align: left">&copy; SIARHEI PORSH traning.by Task:XML
-</div>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

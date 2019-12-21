@@ -43,9 +43,9 @@ public class TariffBuilderDOM extends AbstractTariffBuilder {
                 tariffs.add(tariff);
             }
         } catch (IOException e) {
-            logger.error(e);
+            logger.error(String.format("DOM parser cant read file throws exception: %s.", e));
         } catch (SAXException e) {
-            logger.error(e);
+            logger.error(String.format("DOM parser cant parse file throws exception: %s.", e));
         }
     }
 

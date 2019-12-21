@@ -1,0 +1,62 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/tariffs"
+        xmlns:tns="http://www.example.com/tariffs"
+        elementFormDefault="qualified">
+    <element name="tariffs">
+        <complexType>
+            <sequence>
+                <element name="tariff" type="tns:Tariff" minOccurs="1"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Tariff">
+        <sequence>
+            <element name="name" type="tns:Name"/>
+            <element name="prices" type="tns:Prices"/>
+            <element name="parameters" type="tns:Parameters"/>
+        </sequence>
+        <attribute name="operator" type="tns:Operator" use="required"/>
+        <attribute name="payroll" type="tns:cost" use="required"/>
+        <attribute name="launchDate" type="date"/>
+    </complexType>
+    <simpleType name="Name">
+        <restriction base="ID">
+            <pattern value="[A-Za-z0-9]{3,15}"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="Operator">
+        <restriction base="string">
+            <enumeration value="MTS"/>
+            <enumeration value="LIFE"/>
+            <enumeration value="VELCOM"/>
+        </restriction>
+    </simpleType>
+    <complexType name="Prices">
+        <sequence>
+            <element name="innerCall" type="tns:cost"/>
+            <element name="externalCall" type="tns:cost"/>
+            <element name="homeCall" type="tns:cost"/>
+            <element name="sms" type="tns:cost"/>
+        </sequence>
+    </complexType>
+    <complexType name="Parameters">
+        <sequence>
+            <element name="annyNumber" type="tns:cost"/>
+            <element name="tariffing" type="tns:Timing"/>
+            <element name="connectionPrice" type="tns:cost"/>
+        </sequence>
+    </complexType>
+    <simpleType name="Timing">
+        <restriction base="string">
+            <enumeration value="seconds"/>
+            <enumeration value="minutes"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="cost">
+        <restriction base="decimal">
+            <minExclusive value="0"/>
+            <fractionDigits value="2"/>
+        </restriction>
+    </simpleType>
+</schema>

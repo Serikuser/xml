@@ -30,6 +30,6 @@ public class TariffErrorHandler extends DefaultHandler {
         int columnNumber = exception.getColumnNumber();
         String message = exception.getMessage();
         throw new SAXException(String.format(
-                "[%s] line number: %s column number: %s with message: %s", level,lineNumber,columnNumber,message));
+                "[%s] line number: %s column number: %s with message: %s", level, lineNumber, columnNumber, message));
     }
 }

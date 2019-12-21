@@ -6,15 +6,11 @@ import by.siarhei.xml.entity.Tariff;
 import by.siarhei.xml.factory.ParserType;
 import by.siarhei.xml.factory.TariffBuildFactory;
 import by.siarhei.xml.service.ConfigurationManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public class ParseCommand implements ActionCommand {
-    private static final Logger logger = LogManager.getLogger();
-
     private static final String PAGE = "path.page.result";
 
     @Override
