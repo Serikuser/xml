@@ -26,7 +26,7 @@ public class TariffBuilderDOM extends AbstractTariffBuilder {
         try {
             documentBuilder = factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            logger.error(e);
+            logger.error(String.format("DOM parser cant configure throws exception: %s.", e));
         }
     }
 

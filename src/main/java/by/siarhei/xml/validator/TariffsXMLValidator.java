@@ -31,7 +31,7 @@ public class TariffsXMLValidator {
             logger.info("file is valid.");
             isValid = true;
         } catch (IOException e) {
-            logger.error(filePath, e);
+            logger.error(String.format("Validator cant read file from path: %s throws exception: %s", filePath, e));
         }
         return isValid;
     }

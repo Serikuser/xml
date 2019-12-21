@@ -42,16 +42,16 @@ public class TariffBuilderStAX extends AbstractTariffBuilder {
                 }
             }
         } catch (XMLStreamException e) {
-            logger.error(e);
+            logger.error(String.format("StAX parser cant parse file throws exception: %s.", e));
         } catch (FileNotFoundException e) {
-            logger.error(e);
+            logger.error(String.format("StAX parser cant read file throws exception: %s.", e));
         } finally {
             try {
                 if (inputStream != null) {
                     inputStream.close();
                 }
             } catch (IOException e) {
-                logger.error(e);
+                logger.error(String.format("StAX parser cant close input stream throws exception: %s.", e));
             }
         }
     }

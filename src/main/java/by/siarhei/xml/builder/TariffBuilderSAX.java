@@ -24,11 +24,11 @@ public class TariffBuilderSAX extends AbstractTariffBuilder {
             SAXParser saxParser = factory.newSAXParser();
             saxParser.parse(fileName, handler);
         } catch (SAXException e) {
-            logger.error(e);
+            logger.error(String.format("SAX parser cant parse file throws exception: %s.", e));
         } catch (IOException e) {
-            logger.error(e);
+            logger.error(String.format("SAX parser cant read file throws exception: %s.", e));
         } catch (ParserConfigurationException e) {
-            logger.error(e);
+            logger.error(String.format("SAX parser cant configure throws exception: %s.", e));
         }
         tariffs = handler.getTariffs();
     }
