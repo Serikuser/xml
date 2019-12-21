@@ -78,8 +78,10 @@ public class TariffBuilderDOM extends AbstractTariffBuilder {
         double connectionPrice = Double.parseDouble(
                 getElementTextContent(parameteresElement, TariffEnum.CONNECTIONPRICE.getValue()));
         parameters.setConnectionPrice(connectionPrice);
-        parameters.setTariffing(
-                getElementTextContent(parameteresElement, TariffEnum.TARIFFING.getValue()));
+        String tariffing = getElementTextContent(parameteresElement, TariffEnum.TARIFFING.getValue());
+        if (tariffing != null && !tariffing.isEmpty()) {
+            parameters.setTariffing(tariffing);
+        }
         return parameters;
     }
 

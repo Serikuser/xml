@@ -43,7 +43,7 @@
     <complexType name="Parameters">
         <sequence>
             <element name="annyNumber" type="tns:cost"/>
-            <element name="tariffing" type="tns:Timing"/>
+            <element name="tariffing" type="tns:Timing" default="minutes"/>
             <element name="connectionPrice" type="tns:cost"/>
         </sequence>
     </complexType>

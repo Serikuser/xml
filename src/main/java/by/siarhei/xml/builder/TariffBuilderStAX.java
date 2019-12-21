@@ -77,7 +77,7 @@ public class TariffBuilderStAX extends AbstractTariffBuilder {
                             tariff.setPrices(buildPrices(reader));
                             break;
                         case PARAMETERS:
-                            tariff.setParameters(buildParameters(reader));
+                           // tariff.setParameters(buildParameters(reader));
                             break;
                     }
                     break;
@@ -155,8 +155,10 @@ public class TariffBuilderStAX extends AbstractTariffBuilder {
                             parameters.setConnectionPrice(connectionPrice);
                             break;
                         case TARIFFING:
-                            parameters.setTariffing(
-                                    getXMLText(reader));
+                            String tariffing = getXMLText(reader);
+                            if (tariffing != null && !tariffing.isEmpty()) {
+                                parameters.setTariffing(tariffing);
+                            }
                             break;
                     }
                     break;

@@ -5,6 +5,9 @@ public class TariffParameters {
     double annyNumberPrice;
     double connectionPrice;
 
+    public TariffParameters() {
+        tariffing = "minutes";
+    }
 
     public void setAnnyNumberPrice(double annyNumberPrice) {
         this.annyNumberPrice = annyNumberPrice;

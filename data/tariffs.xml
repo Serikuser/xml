@@ -26,7 +26,7 @@
         </prices>
         <parameters>
             <annyNumber>8.00</annyNumber>
-            <tariffing>minutes</tariffing>
+            <tariffing></tariffing>
             <connectionPrice>2.00</connectionPrice>
         </parameters>
     </tariff>

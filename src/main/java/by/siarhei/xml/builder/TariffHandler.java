@@ -70,7 +70,9 @@ public class TariffHandler extends DefaultHandler {
                 parameters.setAnnyNumberPrice(Double.parseDouble(content));
                 break;
             case TARIFFING:
-                parameters.setTariffing(content);
+                if (content != null && !content.isEmpty()) {
+                    parameters.setTariffing(content);
+                }
                 break;
             case CONNECTIONPRICE:
                 parameters.setConnectionPrice(Double.parseDouble(content));
