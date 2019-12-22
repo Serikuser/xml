@@ -1,12 +1,13 @@
 package by.siarhei.xml.entity;
 
 public class TariffParameters {
+    private static final String DEFAULT_VALUE = "minutes";
     String tariffing;
     double annyNumberPrice;
     double connectionPrice;
 
     public TariffParameters() {
-        tariffing = "minutes";
+        tariffing = DEFAULT_VALUE;
     }
 
     public void setAnnyNumberPrice(double annyNumberPrice) {

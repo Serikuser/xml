@@ -1,4 +1,3 @@
-/*
 package by.siarhei.xml.command;
 
 import by.siarhei.xml.command.impl.ParseCommand;
@@ -22,7 +21,7 @@ public class ParseCommandTest {
 
     @BeforeClass
     void setUp() {
-        request = Mockito.mock(HttpServletRequest.class);
+        request = new TestRequest();
         parseCommand = new ParseCommand();
         expected = EXPECTED_PAGE;
         wrongExpected = WRONG_PAGE;
@@ -48,4 +47,3 @@ public class ParseCommandTest {
         Assert.assertNotEquals(actual, wrongExpected);
     }
 }
-*/
