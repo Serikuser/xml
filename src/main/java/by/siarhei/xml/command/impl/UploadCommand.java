@@ -41,9 +41,9 @@ public class UploadCommand implements ActionCommand {
             request.setAttribute("fileName", fileName);
             currentPage = ConfigurationManager.getProperty(PAGE);
         } catch (IOException e) {
-            logger.error("can't write xml file " + fileName, e);
+            logger.error(String.format("can't write file: %s throws exception: %s ", fileName, e));
         } catch (SAXException e) {
-            logger.error("cant validate xml file " + fileName, e);
+            logger.error(String.format("cant validate file: %s with message: %s ", fileName, e.getMessage()));
             request.setAttribute("exception", e);
             currentPage = ConfigurationManager.getProperty(VALIDATION_ERROR_PAGE);
         }

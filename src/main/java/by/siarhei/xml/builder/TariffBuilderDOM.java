@@ -32,7 +32,7 @@ public class TariffBuilderDOM extends AbstractTariffBuilder {
 
     @Override
     public void buildTariffs(String fileName) {
-        Document document = null;
+        Document document;
         try {
             document = documentBuilder.parse(fileName);
             Element root = document.getDocumentElement();

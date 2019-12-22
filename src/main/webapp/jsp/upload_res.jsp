@@ -27,7 +27,6 @@ Select parser:
 </form>
 <br>
 <%@ include file="back.jsp" %>
-<hr/>
 <%@ include file="footer.jsp" %>
 </body>
 </html>
