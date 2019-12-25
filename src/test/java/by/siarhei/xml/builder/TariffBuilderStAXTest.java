@@ -71,24 +71,34 @@ public class TariffBuilderStAXTest {
 
     @Test
     void buildTariffsNoParametersPositiveTest() {
+        //given
         staxBuilder = new TariffBuilderStAX();
         staxBuilder.buildTariffs(filePath);
-        List<Tariff> actual = staxBuilder.getTariffs();
         List<Tariff> expected = new LinkedList<>();
         tariffBezlemitishe.setParameters(null);
         tariffSuper.setParameters(null);
         expected.add(tariffBezlemitishe);
         expected.add(tariffSuper);
+
+        //when
+        List<Tariff> actual = staxBuilder.getTariffs();
+
+        //then
         Assert.assertEquals(actual, expected);
     }
 
     @Test
     void buildTariffsNoParametersNegativeTest() {
+        //given
         staxBuilder = new TariffBuilderStAX();
         staxBuilder.buildTariffs(filePath);
-        List<Tariff> actual = staxBuilder.getTariffs();
         List<Tariff> expected = new LinkedList<>();
         expected.add(tariffSuper);
+
+        //when
+        List<Tariff> actual = staxBuilder.getTariffs();
+
+        //then
         Assert.assertNotEquals(actual, expected);
     }
 

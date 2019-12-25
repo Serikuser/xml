@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class BackCommandTest {
     private static final String EXPECTED_PAGE = "/jsp/upload.jsp";
-    public static final String WRONG_PAGE = "wrong";
+    private static final String WRONG_PAGE = "wrong";
     private BackCommand back;
     private HttpServletRequest request;
     private String expected;
@@ -37,13 +37,23 @@ public class BackCommandTest {
 
     @Test
     void backCommandPositiveTest() throws IOException, ServletException {
+        //given
+
+        //when
         String actual = back.execute(request);
+
+        //then
         Assert.assertEquals(actual, expected);
     }
 
     @Test
     void backCommandNegativeTest() throws IOException, ServletException {
+        //given
+
+        //when
         String actual = back.execute(request);
+
+        //then
         Assert.assertNotEquals(actual, wrongExpected);
     }
 }

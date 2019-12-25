@@ -71,22 +71,32 @@ public class TariffBuilderSAXTest {
 
     @Test
     void buildTariffsPositiveTest() {
+        //given
         saxBuilder = new TariffBuilderSAX();
         saxBuilder.buildTariffs(filePath);
-        List<Tariff> actual = saxBuilder.getTariffs();
         List<Tariff> expected = new LinkedList<>();
         expected.add(tariffBezlemitishe);
         expected.add(tariffSuper);
+
+        //when
+        List<Tariff> actual = saxBuilder.getTariffs();
+
+        //then
         Assert.assertEquals(actual, expected);
     }
 
     @Test
     void buildTariffsNegativeTest() {
+        //given
         saxBuilder = new TariffBuilderSAX();
         saxBuilder.buildTariffs(filePath);
-        List<Tariff> actual = saxBuilder.getTariffs();
         List<Tariff> expected = new LinkedList<>();
         expected.add(tariffSuper);
+
+        //when
+        List<Tariff> actual = saxBuilder.getTariffs();
+
+        //then
         Assert.assertNotEquals(actual, expected);
     }
 

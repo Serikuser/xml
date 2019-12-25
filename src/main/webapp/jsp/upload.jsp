@@ -20,7 +20,6 @@ Select file:
     <input type="submit" value="Upload"/>
 </form>
 <br>
-<%@ include file="back.jsp" %>
 </hr>
 <%@ include file="footer.jsp" %>
 </body>

@@ -12,7 +12,10 @@ public class ActionFactory {
     private static final String WRONG_ACTION = "wrongAction";
     private static final String MESSAGE_WRONG_ACTION = "message.wrongaction";
 
-    public ActionCommand defineCommand(HttpServletRequest request) {
+    private ActionFactory() {
+    }
+
+    public static ActionCommand defineCommand(HttpServletRequest request) {
         ActionCommand current = new EmptyCommand();
         String action = request.getParameter("command");
         if (action == null || action.isEmpty()) {

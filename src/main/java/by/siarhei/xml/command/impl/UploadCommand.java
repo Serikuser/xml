@@ -18,33 +18,39 @@ import java.util.UUID;
 public class UploadCommand implements ActionCommand {
     private static final Logger logger = LogManager.getLogger();
 
-    private static final String UPLOAD_DIR = "C:\\temp\\xml";
-    private static final String ATTRIBUTE_FILE = "file";
     private static final String PAGE = "path.page.upload";
     private static final String VALIDATION_ERROR_PAGE = "path.page.validationError";
+    private static final String UPLOAD_PATH = "path.upload.uploadDir";
     private static final String TARIFFS_XSD = "tariffs.xsd";
+    private static final String REQUEST_ATTRIBUTE_FILE = "file";
+    private static final String REQUEST_ATTRIBUTE_FILE_NAME = "fileName";
+    private static final String REQUEST_ATTRIBUTE_EXCEPTION = "exception";
+    private static final char EXTENSION_SPLIT_CHAR = '.';
 
     @Override
     public String execute(HttpServletRequest request) throws IOException, ServletException {
-        String uploadFileDir = UPLOAD_DIR + File.separator;
+        String uploadDir = ConfigurationManager.getProperty(UPLOAD_PATH);
+        String uploadFileDir = uploadDir + File.separator;
         TariffsXMLValidator validator = new TariffsXMLValidator();
-        Part filePart = request.getPart(ATTRIBUTE_FILE);
+        Part filePart = request.getPart(REQUEST_ATTRIBUTE_FILE);
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-        String currentPage = "";
+        String currentPage;
         try {
-            String randFilename = UUID.randomUUID() + fileName.substring(fileName.lastIndexOf('.'));
-            String uploadedFilePath = UPLOAD_DIR + File.separator + randFilename;
+            String randFilename = UUID.randomUUID() + fileName.substring(fileName.lastIndexOf(EXTENSION_SPLIT_CHAR));
+            String uploadedFilePath = uploadDir + File.separator + randFilename;
             filePart.write(uploadedFilePath);
             validator.validate(uploadedFilePath, uploadFileDir + TARIFFS_XSD);
             logger.info(String.format("File %s is valid and loaded on server with UUID: %s", fileName, randFilename));
-            request.setAttribute("file", uploadedFilePath);
-            request.setAttribute("fileName", fileName);
+            request.setAttribute(REQUEST_ATTRIBUTE_FILE, uploadedFilePath);
+            request.setAttribute(REQUEST_ATTRIBUTE_FILE_NAME, fileName);
             currentPage = ConfigurationManager.getProperty(PAGE);
         } catch (IOException e) {
-            logger.error(String.format("can't write file: %s throws exception: %s ", fileName, e));
+            logger.error(String.format("can't write file: %s throws exception: %s ", fileName, e.getMessage()));
+            request.setAttribute(REQUEST_ATTRIBUTE_EXCEPTION, e);
+            currentPage = ConfigurationManager.getProperty(VALIDATION_ERROR_PAGE);
         } catch (SAXException e) {
             logger.error(String.format("cant validate file: %s with message: %s ", fileName, e.getMessage()));
-            request.setAttribute("exception", e);
+            request.setAttribute(REQUEST_ATTRIBUTE_EXCEPTION, e);
             currentPage = ConfigurationManager.getProperty(VALIDATION_ERROR_PAGE);
         }
         return currentPage;

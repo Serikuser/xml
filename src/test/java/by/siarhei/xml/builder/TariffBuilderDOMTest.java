@@ -23,7 +23,7 @@ public class TariffBuilderDOMTest {
 
     @BeforeClass
     void setUp() {
-        filePath = "target\\test-classes\\valid.xml";
+        filePath = "\\valid.xml";
         tariffBezlemitishe = new Tariff();
         tariffBezlemitishe.setTariffName("Bezlemitishe");
         tariffBezlemitishe.setOperator("MTS");
@@ -71,25 +71,35 @@ public class TariffBuilderDOMTest {
 
     @Test
     void buildTariffsNoPricesPositiveTest() {
+        //given
         domBuilder = new TariffBuilderDOM();
         domBuilder.buildTariffs(filePath);
-        List<Tariff> actual = domBuilder.getTariffs();
         List<Tariff> expected = new LinkedList<>();
-        tariffBezlemitishe.setPrices(null);
-        tariffSuper.setPrices(null);
         expected.add(tariffBezlemitishe);
         expected.add(tariffSuper);
+        tariffBezlemitishe.setPrices(null);
+        tariffSuper.setPrices(null);
+
+        //when
+        List<Tariff> actual = domBuilder.getTariffs();
+
+        //then
         Assert.assertEquals(actual, expected);
     }
 
     @Test
     void buildTariffsNoPricesNegativeTest() {
+        //given
         domBuilder = new TariffBuilderDOM();
         domBuilder.buildTariffs(filePath);
-        List<Tariff> actual = domBuilder.getTariffs();
         List<Tariff> expected = new LinkedList<>();
         expected.add(tariffBezlemitishe);
         expected.add(tariffSuper);
+
+        //when
+        List<Tariff> actual = domBuilder.getTariffs();
+
+        //then
         Assert.assertNotEquals(actual, expected);
     }
 }

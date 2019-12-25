@@ -30,12 +30,22 @@ public class TariffXMLValidatorTest {
 
     @Test
     void validationPositiveTest() throws SAXException {
+        //given
+
+        //when
         boolean result = validator.validate(validFilePath, schemePath);
+
+        //then
         Assert.assertTrue(result);
     }
 
     @Test(expectedExceptions = SAXException.class)
     void validationNegativeTest() throws SAXException {
+        //given
+
+        //when
         boolean result = validator.validate(invalidFilePath, schemePath);
+
+        //then throws SAXException
     }
 }

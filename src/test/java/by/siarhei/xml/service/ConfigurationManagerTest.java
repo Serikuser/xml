@@ -22,13 +22,23 @@ public class ConfigurationManagerTest {
 
     @Test
     void getResultJspTestPositive() {
+        //given
+
+        //when
         String actual = ConfigurationManager.getProperty(key);
+
+        //then
         Assert.assertEquals(actual, EXPECTED);
     }
 
     @Test
     void getResultJspTestNegative() {
+        //given
+
+        //when
         String actual = ConfigurationManager.getProperty(key);
+
+        //then
         Assert.assertNotEquals(actual, EXPECTED_WRONG);
     }
 }

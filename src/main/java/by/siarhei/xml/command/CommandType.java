@@ -5,23 +5,16 @@ import by.siarhei.xml.command.impl.ParseCommand;
 import by.siarhei.xml.command.impl.UploadCommand;
 
 public enum CommandType {
-    PARSE {
-        {
-            this.command = new ParseCommand();
-        }
-    },
-    UPLOAD {
-        {
-            this.command = new UploadCommand();
-        }
-    },
-    BACK {
-        {
-            this.command = new BackCommand();
-        }
-    };
 
-    ActionCommand command;
+    PARSE(new ParseCommand()),
+    UPLOAD(new UploadCommand()),
+    BACK(new BackCommand());
+
+    CommandType(ActionCommand command) {
+        this.command = command;
+    }
+
+    private ActionCommand command;
 
     public ActionCommand getCurrentCommand() {
         return command;
