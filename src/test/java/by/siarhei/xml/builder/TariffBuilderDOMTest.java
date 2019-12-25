@@ -23,7 +23,7 @@ public class TariffBuilderDOMTest {
 
     @BeforeClass
     void setUp() {
-        filePath = "\\valid.xml";
+        filePath = "target\\test-classes\\valid.xml";
         tariffBezlemitishe = new Tariff();
         tariffBezlemitishe.setTariffName("Bezlemitishe");
         tariffBezlemitishe.setOperator("MTS");
