@@ -38,8 +38,8 @@ public class TariffBuilderDOM extends AbstractTariffBuilder {
             Element root = document.getDocumentElement();
             NodeList tariffList = root.getElementsByTagName(TariffEnum.TARIFF.getValue());
             for (int i = 0; i < tariffList.getLength(); i++) {
-                Element tarriffElement = (Element) tariffList.item(i);
-                Tariff tariff = buildTariff(tarriffElement);
+                Element tariffElement = (Element) tariffList.item(i);
+                Tariff tariff = buildTariff(tariffElement);
                 tariffs.add(tariff);
             }
         } catch (IOException e) {
@@ -49,9 +49,9 @@ public class TariffBuilderDOM extends AbstractTariffBuilder {
         }
     }
 
-    private TariffPrices buildPrices(Element tarriffElement) {
+    private TariffPrices buildPrices(Element tariffElement) {
         TariffPrices prices = new TariffPrices();
-        Element pricesElement = (Element) tarriffElement.getElementsByTagName(
+        Element pricesElement = (Element) tariffElement.getElementsByTagName(
                 TariffEnum.PRICES.getValue()).item(0);
         double externalCall = Double.parseDouble(
                 getElementTextContent(pricesElement, TariffEnum.EXTERNALCALL.getValue()));

@@ -11,16 +11,20 @@ import java.util.List;
 
 public class ParseCommand implements ActionCommand {
     private static final String PAGE = "path.page.result";
+    private static final String PARAMETER_MENU = "menu";
+    private static final String PARAMETER_PATH = "path";
+    private static final String ATTRIBUTE_TARIFFS = "tariffs";
+    private static final String ATTRIBUTE_PARSE_TYPE = "parseType";
 
     @Override
     public String execute(HttpServletRequest request) {
-        ParserType parserType = ParserType.valueOf(
-                request.getParameter("menu").toUpperCase());
-        String fileName = request.getParameter("path");
         ParseFileService parseService = new ParseFileService();
+        ParserType parserType = ParserType.valueOf(
+                request.getParameter(PARAMETER_MENU).toUpperCase());
+        String fileName = request.getParameter(PARAMETER_PATH);
         List<Tariff> tariffs = parseService.build(parserType, fileName);
-        request.setAttribute("tariffs", tariffs);
-        request.setAttribute("parseType", parserType);
+        request.setAttribute(ATTRIBUTE_TARIFFS, tariffs);
+        request.setAttribute(ATTRIBUTE_PARSE_TYPE, parserType);
         return ConfigurationManager.getProperty(PAGE);
     }
 }
