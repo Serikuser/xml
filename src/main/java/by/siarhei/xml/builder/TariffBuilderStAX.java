@@ -77,7 +77,7 @@ public class TariffBuilderStAX extends AbstractTariffBuilder {
                             tariff.setPrices(buildPrices(reader));
                             break;
                         case PARAMETERS:
-                           // tariff.setParameters(buildParameters(reader)); *commented to ignore parameters on building
+                            // tariff.setParameters(buildParameters(reader)); *commented to ignore parameters on building
                             break;
                     }
                     break;

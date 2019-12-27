@@ -1,0 +1,16 @@
+<tariffs>
+    <tariff operator="" payroll="" launchDate="">
+        <name>Bezlemitishe</name>
+        <prices>
+            <innerCall></innerCall>
+            <externalCall></externalCall>
+            <homeCall></homeCall>
+            <sms></sms>
+        </prices>
+        <parameters>
+            <annyNumber></annyNumber>
+            <tariffing></tariffing>
+            <connectionPrice></connectionPrice>
+        </parameters>
+    </tariff>
+</tariffs>

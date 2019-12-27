@@ -1,13 +1,13 @@
 package by.siarhei.xml.command.impl;
 
 import by.siarhei.xml.command.ActionCommand;
-import by.siarhei.xml.service.ConfigurationManager;
+import by.siarhei.xml.manager.ConfigurationManager;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-public class BackCommand implements ActionCommand {
+public class HomeCommand implements ActionCommand {
     private static final String PAGE = "path.page.index";
 
     @Override

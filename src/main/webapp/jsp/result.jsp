@@ -8,8 +8,8 @@
     <title>Result</title>
 </head>
 <body style="background-color: rgba(250,252,209,0.75)">
-
 <h3>File parsed with ${parseType} :</h3>
+<%@ include file="home.jsp" %>
 <hr/>
 <table border="1">
     <thead>

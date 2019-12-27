@@ -36,7 +36,7 @@ public class UploadCommandTest {
     }
 
     @BeforeMethod
-    void setUpMocks(){
+    void setUpMocks() {
         MockitoAnnotations.initMocks(this);
     }
 

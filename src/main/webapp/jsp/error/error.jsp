@@ -9,7 +9,8 @@
 </head>
 <body style="background-color: rgba(250,252,209,0.75)">
 <hr/>
-<h3>File not valid with reason: ${exception}</h3>
+<%@ include file="/jsp/home.jsp" %>
+<h3>${errorMessage} : ${exception}</h3>
 <br>
 <%@ include file="/jsp/back.jsp" %>
 </hr>

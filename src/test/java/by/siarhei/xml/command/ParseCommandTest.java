@@ -33,7 +33,7 @@ public class ParseCommandTest {
     }
 
     @BeforeMethod
-    void setUpMocks(){
+    void setUpMocks() {
         MockitoAnnotations.initMocks(this);
     }
 
@@ -54,7 +54,7 @@ public class ParseCommandTest {
         String actual = parseCommand.execute(request);
 
         //then
-        Mockito.verify(request,Mockito.times(2)).getParameter(Matchers.anyString());
+        Mockito.verify(request, Mockito.times(2)).getParameter(Matchers.anyString());
         Assert.assertEquals(actual, expected);
     }
 
@@ -67,7 +67,7 @@ public class ParseCommandTest {
         String actual = parseCommand.execute(request);
 
         //then
-        Mockito.verify(request,Mockito.times(2)).getParameter(Matchers.anyString());
+        Mockito.verify(request, Mockito.times(2)).getParameter(Matchers.anyString());
         Assert.assertNotEquals(actual, wrongExpected);
     }
 }

@@ -10,7 +10,10 @@
 </head>
 <body style="background-color: rgba(250,252,209,0.75)">
 <br>
-<h3>File <c:out value="${fileName}"/> valid and uploaded.</h3>
+<h3>
+    File <c:out value="${fileName}"/> valid and uploaded.
+</h3>
+<%@ include file="home.jsp" %>
 <hr/>
 Select parser:
 <br/>

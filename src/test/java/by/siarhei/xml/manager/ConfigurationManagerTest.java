@@ -1,18 +1,19 @@
-package by.siarhei.xml.service;
+package by.siarhei.xml.manager;
 
+import by.siarhei.xml.manager.ConfigurationManager;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class MessageManagerTest {
-    public static final String EXPECTED = "Action is not supported.";
+public class ConfigurationManagerTest {
+    public static final String EXPECTED = "/jsp/result.jsp";
     public static final String EXPECTED_WRONG = "wrong";
     String key;
 
     @BeforeClass
     void setUp() {
-        key = "message.wrongaction";
+        key = "path.page.result";
     }
 
     @AfterClass
@@ -25,7 +26,7 @@ public class MessageManagerTest {
         //given
 
         //when
-        String actual = MessageManager.getProperty(key);
+        String actual = ConfigurationManager.getProperty(key);
 
         //then
         Assert.assertEquals(actual, EXPECTED);
@@ -36,7 +37,7 @@ public class MessageManagerTest {
         //given
 
         //when
-        String actual = MessageManager.getProperty(key);
+        String actual = ConfigurationManager.getProperty(key);
 
         //then
         Assert.assertNotEquals(actual, EXPECTED_WRONG);

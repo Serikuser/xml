@@ -1,6 +1,6 @@
 package by.siarhei.xml.command;
 
-import by.siarhei.xml.command.impl.BackCommand;
+import by.siarhei.xml.command.impl.HomeCommand;
 import org.mockito.Mockito;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -11,17 +11,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-public class BackCommandTest {
+public class HomeCommandTest {
     private static final String EXPECTED_PAGE = "/jsp/upload.jsp";
     private static final String WRONG_PAGE = "wrong";
-    private BackCommand back;
+    private HomeCommand back;
     private HttpServletRequest request;
     private String expected;
     private String wrongExpected;
 
     @BeforeClass
     void setUp() {
-        back = new BackCommand();
+        back = new HomeCommand();
         request = Mockito.mock(HttpServletRequest.class);
         expected = EXPECTED_PAGE;
         wrongExpected = WRONG_PAGE;

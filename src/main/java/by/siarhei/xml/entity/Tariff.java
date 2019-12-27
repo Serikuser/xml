@@ -1,12 +1,15 @@
 package by.siarhei.xml.entity;
 
 public class Tariff {
-    String operator;
-    double payroll;
-    String launchDate;
-    String tariffName;
-    TariffPrices prices;
-    TariffParameters parameters;
+    private String operator;
+    private double payroll;
+    private String launchDate;
+    private String tariffName;
+    private TariffPrices prices;
+    private TariffParameters parameters;
+
+    public Tariff() {
+    }
 
     public String getOperator() {
         return this.operator;

@@ -1,9 +1,9 @@
-package by.siarhei.xml.service;
+package by.siarhei.xml.manager;
 
 import java.util.ResourceBundle;
 
 public class ConfigurationManager {
-    private final static ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
 
     private ConfigurationManager() {
     }

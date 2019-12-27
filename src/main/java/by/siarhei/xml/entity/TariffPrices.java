@@ -1,10 +1,13 @@
 package by.siarhei.xml.entity;
 
 public class TariffPrices {
-    double innerCallPrice;
-    double externalCallPrice;
-    double homeCallPrice;
-    double smsPrice;
+    private double innerCallPrice;
+    private double externalCallPrice;
+    private double homeCallPrice;
+    private double smsPrice;
+
+    public TariffPrices() {
+    }
 
     public void setInnerCallPrice(double innerCallPrice) {
         this.innerCallPrice = innerCallPrice;
